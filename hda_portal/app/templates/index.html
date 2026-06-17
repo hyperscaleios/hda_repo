@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HDA Portal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Hyperscale IO Portal">
+    <meta name="author" content="Brady Chang at HSIO">     
+    <base target="_self"/>
+     <header class="header fixed-top">
+
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+                        <div class="site-logo"><a class="navbar-brand" href="index.html"><img  src="/static/assets/images/hsio_logo.pn
+g" width="50" height="50" alt="hsio logo">
+		</div><!--//docs-logo-wrapper-->
+		<!--
+	  </div><!--//container-->
+       </div><!--//branding-->
+     </header>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex; /* Use flexbox for layout */
+            height: 100vh; /* Full viewport height */
+        }
+        .sidebar-container {
+            width: 200px; /* Set a fixed width for the sidebar container */
+            border-right: 1px solid #ccc;
+        }
+        .content-container {
+            flex-grow: 1; /* Take up remaining space */
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove default iframe border */
+        }
+    </style>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="/static/assets/css/style.css">
+
+  </head>
+  <body>
+    <div class="sidebar-container" id="colorlib-page">
+      <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+	<aside id="colorlib-aside" role="complementary" class="js-fullheight">
+	<nav id="colorlib-main-menu" role="navigation">
+	  <ul>
+	    <li>&nbsp;
+	    </li>
+	    <li><a target="_new" href="https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana" >&nbsp;
+            </li>
+            <li><a href="." >HDA Portal</a>
+	    <li><a target="_new" href="https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana" > Grafana
+            </li>
+	    <li><a href="./about" >About</a></li>
+	    <li><a href="#">SQLEditor</a></li>
+	    <li><a href="#">Forum</a></li>
+	    <li><a target="_new" href="http://100.115.92.203/Documentation/docs-page.html">Documentation</a></li>
+          </ul>
+	</nav>
+		</aside> <!-- END COLORLIB-ASIDE -->
+
+		<div id="colorlib-main">
+			<section class="ftco-section pt-4 mb-5 ftco-intro">
+				<div class="container-fluid px-3 px-md-0">
+					<div class="row">
+						<div class="col-md-12 mb-4">
+						   {% block content %}
+							<h1 class="h2">This is the project I'm working on. </h1>
+							{% for customer in customers %}
+							<p>
+							<h3>{{customer[0] }} &emsp; {{customer[1]}} &emsp;{{customer[3]}} </h3>
+							</p>
+							{% endfor %}
+						   {% endblock %}
+
+						</div>
+						<div class="col-md-6">
+							<h2 class="h4">Heading Two</h2>
+							<p>heading Two inside of div tag</p>
+						</div>
+						<div class="col-md-6">
+							<h2 class="h4">antoher Heading Two</h2>
+							<p>another heading two inside div </p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div><!-- END COLORLIB-MAIN -->
+	</div><!-- END COLORLIB-PAGE -->
+
+	</section>
+
+	<script src="/static/assets/js/jquery.min.js"></script>
+  <script src="/static/assets/js/popper.js"></script>
+  <script src="/static/assets/js/bootstrap.min.js"></script>
+  <script src="/static/assets/js/main.js"></script>
+
+	</body>
+</html>
+

@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - HSIO</title>
+      {% else %}
+      <title>Welcome to HSIO Portal</title>
+      {% endif %}
+    </head>
+    <body>
+	    <div>HSIO LOGO : <a href="{{ url_for('index') }}">Home</a> &emsp; <a href="{{ url_for('login') }}">Login</a></div>
+        {% block content %}{% endblock %}
+    </body>
+</html>

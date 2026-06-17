@@ -1,0 +1,31 @@
+import logging
+from flask import Flask, redirect, render_template
+from flask_sqlalchemy import SQLAlchemy
+import psycopg2
+
+app = Flask(__name__, static_folder='assets')
+app.config["TEMPLATE_AUTO_RELOAD"] = True
+app.config[SQLALCHEMY_DATABASE_URI] = 'postgresql://hyperscaleios:changeme@100.115.92.203/ecom'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+
+import routes
+
+class Customer(db.model):
+    cust_id = db.Column(db.Integer, primary_key = True)
+    cust_type = db.Column(db.Integer)
+    cust_name = db.Column(db.String(120))
+    cust_date = db.Column(db.Date)
+    is_deleted = db.Column(db.Boolean)
+
+    def __repr__(self):
+        return f"Customer('{self.cust_name}', '{self.cust_type}')"
+
+def get_db_connection():
+    conn = psycopg2.connect(host='100.115.92.203', database='ecom' user='hyperscaleios', password='changeme')
+    app.logger.info('what the fuck')
+    return conn
+
+if __name__ == "__main__":
+    logging.basicConfig(filename='fuck.log' , level=logging.DEBUG)
+    app.run(debug=True)
